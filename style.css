@@ -1,15 +1,22 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
     background-color: #f0f0f0;
-    color: #0974ff;
     justify-content: center;
 
 }
 
-div, div1{
+header{
+    background-color: #2582a7;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+div {
     background-color: #5f0808;
-    border-radius: 20%;
+    border-radius: 5%;
     justify-content: center;
+    
 
 }
 
@@ -17,5 +24,20 @@ div, h2 {
     font-family: 'Times New Roman', Times, serif;
 
 
+}
+
+.box1 {
+    background-color: #FFD700; 
+    color: black;
+}
+
+.box2 {
+    background-color: #1E90FF; 
+    color: white;
+}
+
+.box3 {
+    background-color: #FF6347; 
+    color: white;
 }
 
