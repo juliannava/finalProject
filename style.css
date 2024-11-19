@@ -6,3 +6,16 @@ body {
 
 }
 
+div, div1{
+    background-color: #5f0808;
+    border-radius: 20%;
+    justify-content: center;
+
+}
+
+div, h2 {
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
