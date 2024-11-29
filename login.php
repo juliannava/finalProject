@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
         
         if (login_user($pdo, $username, $password)) {
-            header('Location: index5.php');
+            header('Location: index.php');
             exit;
         } else {
             $error_message = 'Invalid username or password';

@@ -1,7 +1,7 @@
 <?php
 // config.php - Database configuration
 $host = 'localhost'; 
-$dbname = 'books'; 
+$dbname = 'jugadores'; 
 $user = 'julian'; 
 $pass = 'julian';
 $charset = 'utf8mb4';
