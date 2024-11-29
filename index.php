@@ -42,7 +42,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 }
 
 // Handle form submissions
-/*
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['name']) && isset($_POST['position']) && isset($_POST['club'])) {
         // Insert new entry
@@ -53,16 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insert_sql = 'INSERT INTO player (name, position, club) VALUES (:name, :position, :club)';
         $stmt_insert = $pdo->prepare($insert_sql);
         $stmt_insert->execute(['name' => $name, 'position' => $position, 'club' => $club]);
-    } elseif (isset($_POST['delete_id'])) {
+    } elseif (isset($_POST['delete_name'])) {
         // Delete an entry
-        $delete_id = (int) $_POST['delete_id'];
+        $delete_name = $_POST['delete_name'];
         
-        $delete_sql = 'DELETE FROM jugadores WHERE id = :id';
+        $delete_sql = 'DELETE FROM jugadores WHERE name = :name';
         $stmt_delete = $pdo->prepare($delete_sql);
-        $stmt_delete->execute(['id' => $delete_id]);
+        $stmt_delete->execute(['name' => $name]);
     }
 }
-*/
+
 // Get all books for main table
 $sql = 'SELECT name, position, club FROM jugadores.player';
 $stmt = $pdo->query($sql);
@@ -109,8 +109,8 @@ $stmt = $pdo->query($sql);
                                     <td><?php echo htmlspecialchars($row['position']); ?></td>
                                     <td><?php echo htmlspecialchars($row['club']); ?></td>
                                     <td>
-                                        <form action="index5.php" method="post" style="display:inline;">
-                                            <input type="hidden" name="delete_id" value="<?php echo $row['name']; ?>">
+                                        <form action="index.php" method="post" style="display:inline;">
+                                            <input type="hidden" name="delete_name" value="<?php echo $row['name']; ?>">
                                             <input type="submit" value="Ban!">
                                         </form>
                                     </td>
@@ -145,7 +145,7 @@ $stmt = $pdo->query($sql);
                     <td><?php echo htmlspecialchars($row['position']); ?></td>
                     <td><?php echo htmlspecialchars($row['club']); ?></td>
                     <td>
-                        <form action="index5.php" method="post" style="display:inline;">
+                        <form action="index.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['name']; ?>">
                             <input type="submit" value="Ban!">
                         </form>
@@ -159,9 +159,9 @@ $stmt = $pdo->query($sql);
     <!-- Form section with container -->
     <div class="form-container">
         <h2>Condemn a player Today</h2>
-        <form action="index5.php" method="post">
-            <label for="player">Player:</label>
-            <input type="text" id="player" name="player" required>
+        <form action="index.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="nae" name="name" required>
             <br><br>
             <label for="position">Position:</label>
             <input type="text" id="position" name="position" required>
