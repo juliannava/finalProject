@@ -1,0 +1,129 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #0059b3); /* Gradient background */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fullscreen height */
+}
+
+/* Registration Form Container */
+.auth-container {
+    background: #ffffff; /* Clean white card */
+    color: #333333;
+    padding: 40px 50px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+    text-align: center;
+    width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.auth-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.35); /* Enhanced shadow */
+}
+
+/* Heading */
+.auth-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #1a73e8;
+    font-weight: bold;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle depth */
+}
+
+/* Error and Success Messages */
+.error {
+    background: #ffcccc; /* Light red */
+    color: #cc0000;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cc0000;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 0.9em;
+    box-shadow: 0px 4px 8px rgba(204, 0, 0, 0.2); /* Shadow for emphasis */
+}
+
+.success {
+    background: #ccffcc; /* Light green */
+    color: #009900;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #009900;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-shadow: 0px 4px 8px rgba(0, 153, 0, 0.2); /* Shadow for emphasis */
+}
+
+/* Form Styling */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between fields */
+}
+
+/* Input Fields */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 10px; /* Smooth corners */
+    font-size: 1em;
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.auth-form input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0px 0px 8px rgba(26, 115, 232, 0.5); /* Blue glow */
+    outline: none; /* Removes default outline */
+    transform: scale(1.02); /* Slight zoom */
+}
+
+/* Submit Button */
+.auth-form button {
+    background: linear-gradient(135deg, #1a73e8, #0059b3);
+    color: #ffffff;
+    font-size: 1em;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px; /* Rounded button */
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Depth */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: linear-gradient(135deg, #004494, #003366); /* Darker gradient */
+    transform: translateY(-2px); /* Lift */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.auth-form button:active {
+    background: #003366; /* Solid dark blue */
+    transform: translateY(0); /* Reset lift */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+/* Login Link */
+.auth-container p {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.auth-container p a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-container p a:hover {
+    color: #0059b3; /* Darker blue */
+    transform: scale(1.05); /* Subtle zoom */
+}

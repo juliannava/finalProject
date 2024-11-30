@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register - Betty's Book Banning</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
     <div class="auth-container">

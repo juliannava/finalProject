@@ -90,7 +90,7 @@ $stmt = $pdo->query($sql);
         <h2>Add a new player </h2>
         <form action="index.php" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="nae" name="name" required>
+            <input type="text" id="name" name="name" required>
             <br><br>
             <label for="position">Position:</label>
             <input type="text" id="position" name="position" required>
@@ -128,7 +128,7 @@ $stmt = $pdo->query($sql);
 
         <!-- Search moved to hero section -->
         <div class="hero-search">
-            <h2>Search for a player to Ban</h2>
+            <h2>Search for a player to delete</h2>
             <form action="" method="GET" class="search-form">
                 <label for="search">Search by player:</label>
                 <input type="text" id="search" name="search" required>
@@ -157,7 +157,7 @@ $stmt = $pdo->query($sql);
                                     <td>
                                         <form action="index.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_name" value="<?php echo $row['name']; ?>">
-                                            <input type="submit" value="Ban!">
+                                            <input type="submit" value="Delete">
                                         </form>
                                     </td>
                                 </tr>
