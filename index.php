@@ -81,6 +81,7 @@ $stmt = $pdo->query($sql);
     <div class="hero-overlay">
         <h1 class="hero-title">Best Argentinian Players</h1>
         <h2 class="hero-subtitle">Add or delete players from the best Argentinian soccer league</h2>
+        <a href="first.html" class="back-button">Go Back</a>
     </div>
 </div>
 
