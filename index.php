@@ -56,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (isset($_POST['delete_name'])) {
         // Delete an entry
         $delete_name = $_POST['delete_name'];
-        
-        $delete_sql = 'DELETE FROM jugadores WHERE name = :name';
+
+        $delete_sql = 'DELETE FROM jugadores.player WHERE name = :name';
         $stmt_delete = $pdo->prepare($delete_sql);
         $stmt_delete->execute(['name' => $name]);
     }
@@ -72,14 +72,60 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Players Banning</title>
+    <title>Players Database</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Players Banning</h1>
+    <div class="hero-overlay">
+        <h1 class="hero-title">Best Argentinian Players</h1>
+        <h2 class="hero-subtitle">Add or delete players from the best Argentinian soccer league</h2>
+    </div>
+</div>
+
+
+    <!-- Form section with container -->
+    <div class="form-container">
+        <h2>Add a new player </h2>
+        <form action="index.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="nae" name="name" required>
+            <br><br>
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" required>
+            <br><br>
+            <label for="club">Club:</label>
+            <input type="text" id="club" name="club" required>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
         
+
+    <!-- Table section with container -->
+    <div class="table-container">
+        <h2>Top Argentinian Soccer Players</h2>
+        <table class="half-width-left-align">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Club</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = $stmt->fetch()): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($row['name']); ?></td>
+                    <td><?php echo htmlspecialchars($row['position']); ?></td>
+                    <td><?php echo htmlspecialchars($row['club']); ?></td>
+                </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
+
         <!-- Search moved to hero section -->
         <div class="hero-search">
             <h2>Search for a player to Ban</h2>
@@ -124,53 +170,6 @@ $stmt = $pdo->query($sql);
                 </div>
             <?php endif; ?>
         </div>
-    </div>
-
-    <!-- Table section with container -->
-    <div class="table-container">
-        <h2>All Books in Database</h2>
-        <table class="half-width-left-align">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Club</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $stmt->fetch()): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['name']); ?></td>
-                    <td><?php echo htmlspecialchars($row['position']); ?></td>
-                    <td><?php echo htmlspecialchars($row['club']); ?></td>
-                    <td>
-                        <form action="index.php" method="post" style="display:inline;">
-                            <input type="hidden" name="delete_id" value="<?php echo $row['name']; ?>">
-                            <input type="submit" value="Ban!">
-                        </form>
-                    </td>
-                </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Form section with container -->
-    <div class="form-container">
-        <h2>Condemn a player Today</h2>
-        <form action="index.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="nae" name="name" required>
-            <br><br>
-            <label for="position">Position:</label>
-            <input type="text" id="position" name="position" required>
-            <br><br>
-            <label for="club">Club:</label>
-            <input type="text" id="club" name="club" required>
-            <br><br>
-            <input type="submit" value="Condemn player">
-        </form>
     </div>
 </body>
 </html>
