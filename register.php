@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Register - Argentina National Team Website</title>
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
