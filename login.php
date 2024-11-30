@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
         
         if (login_user($pdo, $username, $password)) {
-            header('Location: index.php');
+            header('Location: first.html');
             exit;
         } else {
             $error_message = 'Invalid username or password';
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Betty's Book Banning</title>
+    <title>Login </title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
