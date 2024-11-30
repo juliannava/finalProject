@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #004a99, #0074e1); /* Gradient background */
+    background: linear-gradient(135deg, #004a99, #0074e1); /* Light to dark blue gradient */
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -11,95 +11,83 @@ body {
     height: 100vh; /* Fullscreen height */
 }
 
-/* Login Form Container */
+/* Container for the login form */
 .auth-container {
-    background: #ffffff; /* Clean white card */
+    background: #ffffff; /* White background for contrast */
     color: #333333;
-    padding: 40px 50px;
-    border-radius: 15px; /* Smooth rounded corners */
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25); /* Deep shadow for pop-out effect */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); /* Adds depth */
     text-align: center;
-    width: 400px; /* Fixed width */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.auth-container:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.35); /* Enhanced shadow */
+    width: 350px; /* Fixed width for the form */
 }
 
 /* Heading */
 .auth-container h1 {
     margin-bottom: 20px;
-    font-size: 2.5em;
+    font-size: 2.2em;
     color: #004a99;
     font-weight: bold;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adds subtle depth to the title */
 }
 
 /* Error Message */
 .error {
-    background: #ffcccc; /* Light red for visibility */
-    color: #cc0000;
-    padding: 12px;
+    background: #ffcccc; /* Light red background */
+    color: #cc0000; /* Dark red text */
+    padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #cc0000;
-    border-radius: 8px; /* Rounded error box */
+    border-radius: 5px;
     font-size: 0.9em;
-    box-shadow: 0px 4px 8px rgba(204, 0, 0, 0.2); /* Error box shadow */
 }
 
-/* Form Styling */
+/* Form Styles */
 .auth-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between fields */
+    gap: 15px; /* Spacing between input fields */
 }
 
 /* Input Fields */
 .auth-form input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #cccccc;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 1em;
-    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .auth-form input:focus {
     border-color: #004a99;
-    box-shadow: 0px 0px 8px rgba(0, 74, 153, 0.5); /* Blue glow on focus */
+    box-shadow: 0px 0px 8px rgba(0, 74, 153, 0.5);
     outline: none; /* Removes default focus outline */
-    transform: scale(1.02); /* Slight zoom effect */
 }
 
 /* Submit Button */
 .auth-form button {
-    background: linear-gradient(135deg, #004a99, #0074e1);
+    background: #004a99;
     color: #ffffff;
     font-size: 1em;
-    padding: 12px 0;
+    padding: 10px 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .auth-form button:hover {
-    background: linear-gradient(135deg, #003366, #005bb5); /* Darker gradient */
-    transform: translateY(-2px); /* Lift on hover */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    background: #0066cc;
+    transform: translateY(-2px); /* Subtle lifting effect */
 }
 
 .auth-form button:active {
-    background: #003366; /* Solid dark blue */
-    transform: translateY(0); /* Reset lift */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+    background: #003366;
+    transform: translateY(0); /* Resets the lifting effect */
 }
 
-/* Register Link */
+/* Link to Register */
 .auth-container p {
     margin-top: 15px;
     font-size: 0.9em;
@@ -109,10 +97,24 @@ body {
     color: #0074e1;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .auth-container p a:hover {
-    color: #005bb5; /* Darker blue on hover */
-    transform: scale(1.05); /* Subtle zoom */
+    color: #005bb5;
+}
+
+/* Footer Section */
+.footer {
+    padding: 10px;
+    background: #f1f1f1;
+    color: #333333;
+    font-size: 0.9em;
+    border-radius: 0 0 15px 15px;
+    margin-top: 20px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
 }

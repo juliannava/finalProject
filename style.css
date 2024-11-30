@@ -37,35 +37,34 @@ div:hover {
 .hero-section {
     position: relative;
     height: 60vh; /* Occupies 60% of the viewport height */
-    background: linear-gradient(135deg, #004a99, #0074e1); /* Smooth gradient using the main colors */
+    background: linear-gradient(135deg, #0059b3, #4a90e2); /* Updated gradient for smoother transition */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
-}
-
-/* Hero Title */
-.hero-title {
-    font-size: 4em;
-    font-weight: 700;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Adds a lighter shadow for a clean look */
+    text-align: center;
+    padding: 20px;
     color: white;
-    text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
-    margin: 0;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
-/* Hero Subtitle */
+
+.hero-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle depth for readability */
+    margin: 0;
+}
+
 .hero-subtitle {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 400;
-    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
-    margin-top: 10px;
     max-width: 80%;
-    line-height: 1.5;
-    justify-content: center;
-    align-items: center;
+    margin-top: 15px;
+    line-height: 1.6;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow for elegance */
 }
 
 /* Table Section */
@@ -126,7 +125,9 @@ div:hover {
     color: #002366;
 }
 
-.form-container form input[type="text"] {
+.form-container form input[type="text"],
+.form-container form input[type="password"],
+.form-container form input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -173,3 +174,17 @@ div:hover {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer Section */
+.footer {
+    padding: 10px;
+    background: #f1f1f1;
+    color: #333333;
+    font-size: 0.9em;
+    border-radius: 0 0 15px 15px;
+    margin-top: 20px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+}

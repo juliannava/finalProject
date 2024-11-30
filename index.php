@@ -171,6 +171,10 @@ $stmt = $pdo->query($sql);
                 </div>
             <?php endif; ?>
         </div>
+        <footer class="footer">
+            <p>&copy; 2024 Julian Navarro. All rights reserved.</p>
+        </footer>
+
     </div>
 </body>
 </html>
