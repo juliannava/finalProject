@@ -79,7 +79,7 @@ $stmt = $pdo->query($sql);
     <!-- Hero Section -->
     <div class="hero-section">
         <h1 class="hero-title">Best Argentinian Players</h1>
-        <h2 class="hero-subtitle">Add or delete players from the best Argentinian soccer league</h2>
+        <h2 class="hero-subtitle">Add or delete players from the list</h2>
         <a href="first.html" class="back-button">Go Back</a>
     </div>
 

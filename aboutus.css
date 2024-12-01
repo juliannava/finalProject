@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
 }
 
+/* About Container */
 .about-container {
     width: 90%;
     max-width: 1200px;
@@ -42,6 +43,27 @@ body {
 .header p {
     margin-top: 10px;
     font-size: 1.2em;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background: #333333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Facts Section */
@@ -88,61 +110,57 @@ body {
     color: #666666;
 }
 
+/* Table for Images */  
+.team-images-table {  
+    width: 100%;  
+    border-spacing: 20px;  
+    text-align: center;  
+    display: flex;  
+    justify-content: space-between;  
+    gap: 20px;  
+ }  
+   
+ .image-container {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    flex: 1; /* Ensure all images have the same width */  
+ }  
+   
+ .team-images-table img {  
+    width: 100%;  
+    height: 250px; /* Set a fixed height for uniformity */  
+    object-fit: cover; /* Ensure the images cover the space without distorting */  
+    border-radius: 10px;  
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+ }  
+   
+ .team-images-table img:hover {  
+    transform: scale(1.1);  
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);  
+ }  
+   
+ .image-container p {  
+    margin-top: 10px;  
+    font-size: 0.9em;  
+    color: #666666;  
+ }
+ 
 /* Footer Section */
 .footer {
-    padding: 10px;
+    padding: 15px;
     background: #f1f1f1;
     color: #333333;
     font-size: 0.9em;
     border-radius: 0 0 15px 15px;
     margin-top: 20px;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .footer p {
     margin: 0;
+    font-size: 0.9em;
 }
-
-/* Header Section */
-.header {
-    padding: 20px;
-    background: linear-gradient(135deg, #0059b3, #1a73e8);
-    color: #ffffff;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.header p {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-/* Back Button */
-.back-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #ffffff;
-    background: #333333;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.back-button:hover {
-    background: #444444;
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-}
-

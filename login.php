@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="auth-container">
-        <h1>Login</h1>
+        <h1>Argentina National Team Website</h1>
+        <h3>Login</h3>
         <?php if ($error_message): ?>
             <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
         <?php endif; ?>
