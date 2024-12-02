@@ -55,11 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_insert->execute(['name' => $name, 'position' => $position, 'club' => $club]);
     } elseif (isset($_POST['delete_name'])) {
         // Delete an entry
-        $delete_name = $_POST['delete_name'];
-
-        $delete_sql = 'DELETE FROM jugadores.player WHERE name = :name';
-        $stmt_delete = $pdo->prepare($delete_sql);
-        $stmt_delete->execute(['name' => $name]);
+        if (isset($_POST['delete_name'])) {
+            $delete_name = $_POST['delete_name'];
+        
+            $delete_sql = 'DELETE FROM jugadores.player WHERE name = :name';
+            $stmt_delete = $pdo->prepare($delete_sql);
+            $stmt_delete->execute(['name' => $delete_name]);
+        }
     }
 }
 
@@ -129,45 +131,45 @@ $stmt = $pdo->query($sql);
         <div class="hero-search">
             <h2>Search for a player to delete</h2>
             <form action="" method="GET" class="search-form">
-                <label for="search">Search by player:</label>
+                <label for="search">Search by name:</label>
                 <input type="text" id="search" name="search" required>
                 <input type="submit" value="Search">
             </form>
             
-            <?php if (isset($_GET['search'])): ?>
-                <div class="search-results">
-                    <h3>Search Results</h3>
-                    <?php if ($search_results && count($search_results) > 0): ?>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>Position</th>
-                                    <th>Club</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($search_results as $row): ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($row['name']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['position']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['club']); ?></td>
-                                    <td>
-                                        <form action="index.php" method="post" style="display:inline;">
-                                            <input type="hidden" name="delete_name" value="<?php echo $row['name']; ?>">
-                                            <input type="submit" value="Delete">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    <?php else: ?>
-                        <p>No players found matching your search.</p>
-                    <?php endif; ?>
-                </div>
+                <?php if (isset($_GET['search'])): ?>
+        <div class="table-container search-results">
+            <h3>Search Results</h3>
+            <?php if ($search_results && count($search_results) > 0): ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Position</th>
+                            <th>Club</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($search_results as $row): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['position']); ?></td>
+                            <td><?php echo htmlspecialchars($row['club']); ?></td>
+                            <td>
+                                <form action="index.php" method="post" style="display:inline;">
+                                    <input type="hidden" name="delete_name" value="<?php echo $row['name']; ?>">
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No players found matching your search.</p>
             <?php endif; ?>
+        </div>
+    <?php endif; ?>
         </div>
         <footer class="footer">
             <p>&copy; 2024 Julian Navarro. All rights reserved.</p>
