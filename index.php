@@ -65,6 +65,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['name']) && isset($_POST['position']) && isset($_POST['club'])) {
+        // Insert new entry
+        $name = htmlspecialchars($_POST['name']);
+        $position = htmlspecialchars($_POST['position']);
+        $club = htmlspecialchars($_POST['club']);
+        
+        $insert_sql = 'INSERT INTO player (name, position, club) VALUES (:name, :position, :club)';
+        $stmt_insert = $pdo->prepare($insert_sql);
+        $stmt_insert->execute(['name' => $name, 'position' => $position, 'club' => $club]);
+    } elseif (isset($_POST['delete_name'])) {
+        // Delete an entry
+        $delete_name = $_POST['delete_name'];
+        
+        $delete_sql = 'DELETE FROM jugadores.player WHERE name = :name';
+        $stmt_delete = $pdo->prepare($delete_sql);
+        $stmt_delete->execute(['name' => $delete_name]);
+    } elseif (isset($_POST['update_name']) && isset($_POST['new_club'])) {
+        // Update the club of an existing player
+        $update_name = $_POST['update_name'];
+        $new_club = htmlspecialchars($_POST['new_club']);
+        
+        $update_sql = 'UPDATE jugadores.player SET club = :new_club WHERE name = :name';
+        $stmt_update = $pdo->prepare($update_sql);
+        $stmt_update->execute(['new_club' => $new_club, 'name' => $update_name]);
+    }
+}
+
 // Get all books for main table
 $sql = 'SELECT name, position, club FROM jugadores.player';
 $stmt = $pdo->query($sql);
@@ -146,7 +174,8 @@ $stmt = $pdo->query($sql);
                             <th>Player</th>
                             <th>Position</th>
                             <th>Club</th>
-                            <th>Actions</th>
+                            <th>Delete</th>
+                            <th>Change Club</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -159,6 +188,13 @@ $stmt = $pdo->query($sql);
                                 <form action="index.php" method="post" style="display:inline;">
                                     <input type="hidden" name="delete_name" value="<?php echo $row['name']; ?>">
                                     <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="index.php" method="post" style="display:inline;">
+                                    <input type="hidden" name="update_name" value="<?php echo htmlspecialchars($row['name']); ?>">
+                                    <input type="text" name="new_club" placeholder="New Club" required style="width:100px;">
+                                    <input type="submit" value="Change Club">
                                 </form>
                             </td>
                         </tr>
